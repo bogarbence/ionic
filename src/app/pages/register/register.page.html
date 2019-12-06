@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Registration</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="loginForm" (submit)="onSubmit()">
+    <ion-item>
+      <ion-label>Username:</ion-label>
+      <ion-input type="text" formControlName="username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Password:</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Confirm Password:</ion-label>
+      <ion-input type="password" formControlName="passwordagain"></ion-input>
+    </ion-item>
+    <div class="submitbut">
+      <ion-button type="submit" [disabled]="!loginForm.valid"
+        >Submit</ion-button
+      >
+    </div>
+  </form>
+</ion-content>
